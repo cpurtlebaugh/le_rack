@@ -2,9 +2,28 @@
 
 <div class='container'>
   <div class='posts'>
-    <%= @posts.each do |post| %>
-    <li> <%= post.title %>, <%= post.url %>, <%= post.price %> <%= post.type %></li>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Type</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-  <% end %>
+    <tbody>
+
+      <%= @posts.each do |post| %>
+      <td> <%= post.title %> </td>
+      <td><%= post.url %> </td>
+      <td> <%= post.price %> </td>
+      <td> <%= link_to "Show" , post %> </td>
+      <td> <%= link_to "Edit" , edit_post_path(post) %></td>
+      <td> <%= link_to "Delete" , post, method: :delete %> </td>
+      <% end %>
+    </tbody>
+  </table>
+
   </div>
 </div>

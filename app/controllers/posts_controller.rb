@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find_by(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def create
@@ -21,11 +21,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = @post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def destroy
-    @post = @post.find_by(params[:id]).destroy
+    @post = Post.find(params[:id]).destroy
+    redirect_to root_path
   end
 
   private
