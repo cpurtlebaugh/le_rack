@@ -1,2 +1,10 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>Market</h1>
+
+<div class='container'>
+  <div class='posts'>
+    <%= @posts.each do |post| %>
+    <li> <%= post.title %>, <%= post.url %>, <%= post.price %> <%= post.type %></li>
+
+  <% end %>
+  </div>
+</div>
