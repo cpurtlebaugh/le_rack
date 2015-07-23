@@ -14,9 +14,9 @@
 
     <tbody>
 
-      <%= @posts.each do |post| %>
+      <% @posts.each do |post| %>
       <td> <%= post.title %> </td>
-      <td><%= post.url %> </td>
+      <td><img src= <%= post.url %>> </td>
       <td> <%= post.price %> </td>
       <td> <%= link_to "Show" , post %> </td>
       <td> <%= link_to "Edit" , edit_post_path(post) %></td>
